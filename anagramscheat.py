@@ -30,17 +30,17 @@ with open(text_file, encoding="utf-8") as f:
 # error code if user inputs something other than a letter
 def input_characters():
     while True:
-        user_input = input("Enter 8 letters: ").strip()
-        if len(user_input) == 8 and user_input.isalpha():
+        user_input = input("Enter 6 letters: ").strip()
+        if len(user_input) == 6 and user_input.isalpha():
             return list(user_input.lower())
-        print("Error: that wasn't 8 characters")
+        print("Error: that wasn't 6 characters")
 
 # this function will take the list generated from the user input 
 # and create every possible outcome of letter combinations, check to see
 # if the combo is in the word bank, and if it is, add it to the possible_combo set
 def word_calculator(user_input_characters, wordbank):
     possible_combos = set()
-    for r in range(3, 9):
+    for r in range(3, 7):
         for combo in itertools.permutations(user_input_characters, r):
             word = "".join(combo)
             if word in wordbank:
